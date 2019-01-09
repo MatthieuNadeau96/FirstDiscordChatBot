@@ -26,7 +26,8 @@ client.on('message', (msg) => {
       './assets/imgs/eggRockwithFeet.jpg',
       './assets/imgs/eggSteve.png',
       './assets/imgs/eggSunnySideUp.jpg',
-      './assets/imgs/eggWhat.jpg'
+      './assets/imgs/eggWhat.jpg',
+      './assets/imgs/eggFacePan.jpg'
     ];
     let img = eggArray[Math.floor(Math.random()*eggArray.length)];
     const buffer = fs.readFileSync(img);
