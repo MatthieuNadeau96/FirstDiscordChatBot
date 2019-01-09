@@ -6,22 +6,15 @@ const fs = require('fs');
 
 const client = new Client();
 
+
+
 client.on('message', (msg) => {
-  if (msg.content === '!egg') {
-    const buffer = fs.readFileSync('./assets/imgs/egg.png');
-    const attachment = new Attachment(buffer, './assets/imgs/egg.png')
-    msg.channel.send(attachment);
-  }
 
-  if (msg.content === '!eggFace') {
-    const buffer = fs.readFileSync('./assets/imgs/eggFace.png');
-    const attachment = new Attachment(buffer, './assets/imgs/eggFace.png')
-    msg.channel.send(attachment);
-  }
-
-  if (msg.content === '!dwayne') {
-    const buffer = fs.readFileSync('./assets/imgs/dwayne.png');
-    const attachment = new Attachment(buffer, './assets/imgs/dwayne.png')
+  if (msg.content === '!giveMeEgg') {
+    const eggArray = ['./assets/imgs/egg.png', './assets/imgs/eggFace.png', './assets/imgs/dwayne.png'];
+    let img = eggArray[Math.floor(Math.random()*eggArray.length)];
+    const buffer = fs.readFileSync(img);
+    const attachment = new Attachment(buffer, img);
     msg.channel.send(attachment);
   }
 
