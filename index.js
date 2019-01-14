@@ -6,8 +6,6 @@ const fs = require('fs');
 
 const client = new Client();
 
-
-
 client.on('message', (msg) => {
 
   if (msg.content === '!giveMeEgg') {
